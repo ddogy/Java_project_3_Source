@@ -18,7 +18,7 @@
 			<div><span class = "block">강의소개 : <c:out value="${list.class_target}" /></span></div>
 	</c:forEach>
 	</div>
-
+	
 </main>
 <%@ include file="../include/footer.jsp"%>
 <script type="text/javascript">
