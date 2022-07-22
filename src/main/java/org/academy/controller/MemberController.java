@@ -23,28 +23,25 @@ public class MemberController {
 	@Autowired
 	private MemberService memberservice;
 
-	// 회원가입 페이지 이동
-	@RequestMapping(value = "join", method = RequestMethod.GET)
-	public void joinGET() {
-
-		logger.info("회원가입 페이지 진입");
-
-	}
-
-	// 회원가입
-	@RequestMapping(value = "/join", method = RequestMethod.POST)
-	public String joinPOST(MemberVO member) throws Exception {
-
-		logger.info("join 진입");
-
-		// 회원가입 서비스 실행
-		memberservice.memberJoin(member);
-
-		logger.info("join Service 성공");
-
-		return "redirect:/main";
-
-	}
+	@RequestMapping(value="join",method=RequestMethod.GET )
+	   public void joinGET() {
+		   logger.info("회원가입 페이지 진입");
+	   }
+	 //회원가입
+	 	@RequestMapping(value="/join", method=RequestMethod.POST)
+	 	public String MemberJoinPOST(MemberVO member) throws Exception{
+	 		
+	 		logger.info("MemberJoin 진입");
+	 		
+	 		// 회원가입 서비스 실행
+	 		memberservice.memberJoin(member);
+	 		
+	 		logger.info("Join Service 성공");
+	 		
+	 		
+	 		return "main";
+	 		
+	 	}
 
 	// 로그인 페이지 이동
 	@RequestMapping(value = "login", method = RequestMethod.GET)
@@ -78,7 +75,7 @@ public class MemberController {
 	} // memberIdChkPOST() 종료
 
 	/* 로그인 */
-	@RequestMapping(value = "login", method = RequestMethod.POST)
+	@RequestMapping(value = "login.do", method = RequestMethod.POST)
 	public String loginPOST(HttpServletRequest request, MemberVO member, RedirectAttributes rttr) throws Exception {
 
 		// System.out.println("login 메서드 진입");
@@ -98,5 +95,19 @@ public class MemberController {
 
 		return "redirect:/main";
 	}
+	
+	  /* 메인페이지 로그아웃 */
+    @RequestMapping(value="logout.do", method=RequestMethod.GET)
+    public String logoutMainGET(HttpServletRequest request) throws Exception{
+        
+        logger.info("logoutMainGET메서드 진입");
+        
+        HttpSession session = request.getSession();
+        
+        session.invalidate();
+        
+        return "redirect:/main";        
+        
+    }
 
 }

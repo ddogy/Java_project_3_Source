@@ -185,7 +185,7 @@ h2 {
 				</div>
 				<div class="login_etc2">
 					<div class="join">
-						<a href="">회원가입</a>
+						<a href="join">회원가입</a>
 					</div>
 				</div>
 				<div class="login_etc3">
@@ -207,7 +207,7 @@ h2 {
 		$(".login_button").click(function() {
 
 			/* 로그인 메서드 서버 요청 */
-			$("#login_form").attr("action", "/member/login");
+			$("#login_form").attr("action", "/member/login.do");
 			$("#login_form").submit();
 
 		});
