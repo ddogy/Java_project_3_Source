@@ -33,6 +33,14 @@
             <mapping path="/mypage/**"></mapping>
             <beans:bean id="MypageIntreceptor" class="org.academy.interceptor.MypageInterceptor"></beans:bean>
         </interceptor>
+        <interceptor>
+            <mapping path="/notice/**"></mapping>
+            <beans:bean id="NoticeInterceptor" class="org.academy.interceptor.NoticeInterceptor"></beans:bean>
+        </interceptor>
+        <interceptor>
+            <mapping path="/question/**"></mapping>
+            <beans:bean id="QuestionInterceptor" class="org.academy.interceptor.QuestionInterceptor"></beans:bean>
+        </interceptor>
 	</interceptors>
 	
 	

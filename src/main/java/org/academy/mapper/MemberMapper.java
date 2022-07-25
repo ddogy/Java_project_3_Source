@@ -1,7 +1,9 @@
 package org.academy.mapper;
 
 import org.academy.domain.MemberVO;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface MemberMapper {
 
 	// 회원가입
@@ -12,4 +14,7 @@ public interface MemberMapper {
 
 	// 로그인
 	public MemberVO memberLogin(MemberVO member);
+	
+	// 회원정보수정
+	public void memberUpdate(MemberVO member)throws Exception;
 }

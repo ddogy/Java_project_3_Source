@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MemberServiceImpl implements MemberService{
+	
 
 	@Autowired
 	MemberMapper membermapper;
@@ -30,6 +31,13 @@ public class MemberServiceImpl implements MemberService{
         
         return membermapper.memberLogin(member);
     }
+
+	@Override
+	public void memberUpdate(MemberVO member) throws Exception {
+		// TODO Auto-generated method stub
+		membermapper.memberUpdate(member);
+		
+	}
 	
 	
 	

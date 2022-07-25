@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.academy.domain.MemberVO;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-public class MypageInterceptor implements HandlerInterceptor {
+public class NoticeInterceptor implements HandlerInterceptor {
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
