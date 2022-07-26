@@ -26,16 +26,5 @@
 		insert into online_inquery (oi_code, course_code, title, stu_id, name,contact_detail, content, oi_status, enter, updatedate)
 		values(#{oi_code},#{course_code}, #{title}, #{stu_id}, #{name}, #{contact_detail}, #{content} , 'Y', sysdate, sysdate)
 	</insert>
-		<!--
-	<select id="option1" resultType="org.academy.domain.InqueryVO">
-		select c.course_code, c.course_name, b.branchcode, b.branch_name
-		from course c, branch b
-		where b.branchcode='1' and c.branchcode = b.branchcode
-		or b.branchcode='2' and c.branchcode = b.branchcode; = #{branch_code}
-	</select>
-	
- 
-	<select id="read" resultType="org.academy.domain.NoticeVO">
-		select * from notice where notice_code = #{notice_code}
-	</select> -->
+
 </mapper>

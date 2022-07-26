@@ -1,5 +1,6 @@
 package org.academy.controller;
 
+import org.academy.domain.Criteria;
 import org.academy.domain.InqueryVO;
 import org.academy.domain.NoticeVO;
 import org.academy.service.InqueryService;
@@ -27,7 +28,6 @@ private InqueryService service;
 	} 
 	@GetMapping("/list")
 	public void list() {
-	
 	} 
 	
 	/*

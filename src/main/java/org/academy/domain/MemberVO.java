@@ -20,5 +20,6 @@ public class MemberVO {
 	private Date ENTER;
 	private Date UPDATEDATE;
 	private String BIRTH;
+	private String ADMIN_CODE;
 	
 }

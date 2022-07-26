@@ -125,16 +125,15 @@
 							<li class="my-2">
 								<button class="btn d-inline-flex align-items-center collapsed"
 									data-bs-toggle="collapse" aria-expanded="false"
-									data-bs-target="#coms-collapse" aria-controls="coms-collapse">내상담
-									문의</button>
+									data-bs-target="#coms-collapse" aria-controls="coms-collapse">커뮤니티</button>
 								<ul class="list-unstyled ps-3 collapse" id="coms-collapse">
 									<li class="nav-item"><a class="nav-link"
 										href="/notice/list"> <span data-feather="file"></span>
 											공지사항
 									</a></li>
 									<li class="nav-item"><a class="nav-link"
-										href="/question/list"> <span data-feather="file"></span>
-											질문게시판
+										href="/inquery/list"> <span data-feather="file"></span>
+											내상담문의
 									</a></li>
 								</ul>
 							</li>

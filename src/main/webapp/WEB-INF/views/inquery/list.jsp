@@ -36,4 +36,3 @@ pageEncoding="UTF-8"%>
       </main>
 <!-- main end-->
 <%@ include file="../include/footer.jsp" %>
-

@@ -19,7 +19,7 @@
 						<form role="form" action="/question/register" method="post">
 							<div class="form-group">
 								<label>강의</label>
-								<input class="form-control" name="class_code">
+								<input class="form-control" name="class_code">	
 							</div>
 							<div class="form-group">
 								<label>제목</label>
@@ -29,9 +29,9 @@
 								<label>내용</label>
 								<textarea class="form-control" rows="3" name="content"></textarea>
 							</div>
-							<div class="form-group">
-								<label>작성자</label>
-								<input class="form-control" name="stu_id" />
+							<div class="form-group" hidden>
+								<label for="STU_ID">작성자</label>
+								<input class="form-control" id="STU_ID" name="stu_id" value="${member.STU_ID}" readonly>
 							</div>
 <!--	파일 첨부						
 							<div class="row">
