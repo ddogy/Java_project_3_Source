@@ -18,4 +18,5 @@ public class InqueryVO {
 	private Date enter;
 	private Date updatedate;
 	private String title;
+	private String course_name;
 }

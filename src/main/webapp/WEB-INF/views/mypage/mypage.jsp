@@ -21,9 +21,7 @@ pageEncoding="UTF-8"%>
               <th scope="col">강사</th>
               <th scope="col">개강</th>
               <th scope="col">종강</th>
-              <th scope="col">
-              <a href="/mypage/video_list">동영상 페이지 이동</a></th>
-            </tr>
+			  <th scope="col">강의 영상</th>
           </thead>
           <tbody>
           <thead>

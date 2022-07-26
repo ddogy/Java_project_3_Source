@@ -2,8 +2,8 @@ package org.academy.mapper;
 
 import java.util.List;
 
+import org.academy.domain.Criteria;
 import org.academy.domain.InqueryVO;
-import org.academy.domain.NoticeVO;
 
 public interface InqueryMapper {
 
@@ -18,4 +18,9 @@ public interface InqueryMapper {
 		public void insert(InqueryVO inquery);
 		
 		public void insertSelectKey(InqueryVO inquery);
+		
+		   // 페이징 처리
+		public List<InqueryVO> getListWithPaging(Criteria cri);
+		   
+		public int getTotalCount(Criteria cri);
 }

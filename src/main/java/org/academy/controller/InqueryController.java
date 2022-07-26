@@ -3,11 +3,13 @@ package org.academy.controller;
 import org.academy.domain.Criteria;
 import org.academy.domain.InqueryVO;
 import org.academy.domain.NoticeVO;
+import org.academy.domain.PageDTO;
 import org.academy.service.InqueryService;
 import org.academy.service.NoticeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,17 +28,32 @@ private InqueryService service;
 	public void register() {
 	
 	} 
+	/*
 	@GetMapping("/list")
 	public void list() {
 	} 
 	
-	/*
+	
 	@GetMapping("/list")
 	public void list(Model model) {
 		
 		log.info("list");
 		model.addAttribute("list", service.getList());
 	} */
+	
+	@GetMapping("/list")
+	public void list(Criteria cri, Model model) {
+	   
+	   log.info("list: "+cri);
+	   model.addAttribute("list", service.getList(cri));
+	   //model.addAttribute("pageMaker", new PageDTO(cri, 123));
+	   
+	   int total = service.getTotal(cri);
+	   
+	   log.info("total: "+total);
+	   
+	   model.addAttribute("pageMaker", new PageDTO(cri, total));
+	}			
 	
 	@PostMapping("/register")
 	public String register(InqueryVO inquery, RedirectAttributes rttr) {
@@ -51,8 +68,11 @@ private InqueryService service;
 		return "redirect:/inquery/list";
 	} 
 	
-	@GetMapping("/get")
-	public void get() {
-
-	}
+	   // 조회 처리
+	   @GetMapping({"/get","/modify"})
+	   public void get(@RequestParam("oi_code") String oi_code, @ModelAttribute("cri") Criteria cri, Model model) {
+	      
+	      log.info("/get or /modify");
+	      model.addAttribute("inquery", service.get(oi_code));
+	   }
 }

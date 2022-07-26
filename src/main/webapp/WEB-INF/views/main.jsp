@@ -74,7 +74,7 @@
 						<p class="fs-5 fw-bolder">과정소개</p>
 					</div>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="/inquery/list">
+			<li class="nav-item"><a class="nav-link" href="/inquery/register">
 					<div class="text-black text-opacity-50">
 						<p class="fs-5 fw-bolder">온라인상담</p>
 					</div>
