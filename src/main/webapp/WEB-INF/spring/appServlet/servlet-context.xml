@@ -23,9 +23,26 @@
 	
 	<context:component-scan base-package="org.academy.controller" />
 	
+	<!-- 인터셉터 적용 -->
+	<interceptors>
+        <interceptor>
+            <mapping path="/member/login.do"></mapping>
+            <beans:bean id="loginInterceptor" class="org.academy.interceptor.LoginInterceptor"></beans:bean>
+        </interceptor>
+        <interceptor>
+            <mapping path="/mypage/**"></mapping>
+            <beans:bean id="MypageIntreceptor" class="org.academy.interceptor.MypageInterceptor"></beans:bean>
+        </interceptor>
+        <interceptor>
+            <mapping path="/notice/**"></mapping>
+            <beans:bean id="NoticeInterceptor" class="org.academy.interceptor.NoticeInterceptor"></beans:bean>
+        </interceptor>
+        <interceptor>
+            <mapping path="/question/**"></mapping>
+            <beans:bean id="QuestionInterceptor" class="org.academy.interceptor.QuestionInterceptor"></beans:bean>
+        </interceptor>
+	</interceptors>
 	
-	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
-	</beans:bean>
 	
 	
 </beans:beans>
