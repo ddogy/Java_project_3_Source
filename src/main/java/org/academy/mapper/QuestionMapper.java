@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.academy.domain.Criteria;
 import org.academy.domain.QuestionVO;
+import org.apache.ibatis.annotations.Param;
 
 public interface QuestionMapper {
 	
@@ -36,5 +37,9 @@ public interface QuestionMapper {
 	
 
 	public int getTotalCount(Criteria cri);
+	
+	
+	// 댓글수 처리
+	public void updateReplycnt(@Param("que_code") String que_code, @Param("amount") int amount);
 
 }

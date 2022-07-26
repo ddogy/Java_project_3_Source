@@ -13,7 +13,7 @@ select * from question where que_code <> '0'
 
 <select id="getListWithPaging" resultType="org.academy.domain.QuestionVO">
 	<![CDATA[
-			select R.que_code, R.class_code, R.title, R.content, R.stu_id, R.updateDate
+			select R.que_code, R.class_code, R.title, R.content, R.stu_id, R.updateDate, R.replycnt
 			from 
 			(
 	 		  	select rownum as rn, O.*
@@ -21,6 +21,7 @@ select * from question where que_code <> '0'
 	  		  	(
 	  		  		select Q.*
 	  		  		from question Q
+	  		  		where status = 'Y'
 	  		  		order by to_number(que_code) desc
 	  		  	) O
 	   		 	where rownum <= #{pageNum} * #{amount}
@@ -61,7 +62,8 @@ select * from question where que_code <> '0'
 
 
 <delete id="delete" >
-	delete from question where que_code = #{que_code}
+	update question set status = 'N' 
+	where que_code = #{que_code}
 </delete>
 
 
@@ -73,6 +75,11 @@ select * from question where que_code <> '0'
 	class_code = #{class_code},
 	updateDate = sysdate
 	where que_code = #{que_code}
+</update>
+
+
+<update id="updateReplycnt">
+	update question set replycnt = replycnt + #{amount} where que_code = #{que_code}
 </update>
 
 

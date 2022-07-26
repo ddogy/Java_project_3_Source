@@ -37,9 +37,15 @@
 				<!-- 로그인했을때 -->
 				<c:if test="${ member != null }">
 					<div class="login_success_area">
-						<span>회원 : ${member.STU_ID} 님 환영합니다.</span><br> <span
-							class="member"><a href="/mypage/mypage">마이페이지</a></span> <span
-							class="member"><a href="/member/logout.do">로그아웃</a></span>
+						<span>회원 : ${member.STU_ID} 님 환영합니다.</span><br>
+						<!-- 기존코드
+						<span class="member"><a href="/mypage/mypage">마이페이지</a></span> 
+						<span class="member"><a href="/member/logout.do">로그아웃</a></span> -->
+						<button type="button" class="btn btn-outline-primary"
+							onclick="location.href='/mypage/mypage'" style="cursor: pointer;">마이페이지</button>
+						<button type="button" class="btn btn-outline-primary"
+							onclick="location.href='/member/logout.do'"
+							style="cursor: pointer;">로그아웃</button>
 					</div>
 				</c:if>
 			</div>
@@ -49,7 +55,7 @@
 
 			<div class="row justify-content-md-center">
 				<div class="col-md-auto">
-					<h1>3팀 academy</h1>
+					<h1 onclick="location.href='/main';" style="cursor:pointer;">3팀 academy</h1>
 				</div>
 			</div>
 			<br>
@@ -75,7 +81,8 @@
 						<p class="fs-5 fw-bolder">과정소개</p>
 					</div>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="/inquery/register">
+			<li class="nav-item"><a class="nav-link"
+				href="/inquery/register">
 					<div class="text-black text-opacity-50">
 						<p class="fs-5 fw-bolder">온라인상담</p>
 					</div>
@@ -112,12 +119,14 @@
 							</li>
 							<li class="my-2">
 								<button class="btn d-inline-flex align-items-center collapsed"
-									onclick= "location.href='memberUpdateView'" style="cursor:pointer;">개인정보 변경</button>
+									onclick="location.href='memberUpdateView'"
+									style="cursor: pointer;">개인정보 변경</button>
 							</li>
 							<li class="my-2">
 								<button class="btn d-inline-flex align-items-center collapsed"
 									data-bs-toggle="collapse" aria-expanded="false"
-									data-bs-target="#coms-collapse" aria-controls="coms-collapse">내상담 문의</button>
+									data-bs-target="#coms-collapse" aria-controls="coms-collapse">내상담
+									문의</button>
 								<ul class="list-unstyled ps-3 collapse" id="coms-collapse">
 									<li class="nav-item"><a class="nav-link"
 										href="/notice/list"> <span data-feather="file"></span>

@@ -18,7 +18,7 @@ public class MypageInterceptor implements HandlerInterceptor {
 
 		if (lvo == null) { // 아이디 틀릴때
 
-			response.sendRedirect("/main"); // 메인페이지로 리다이렉트
+			response.sendRedirect("/member/login"); // 메인페이지로 리다이렉트
 
 			return false;
 

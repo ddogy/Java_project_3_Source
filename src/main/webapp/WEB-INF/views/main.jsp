@@ -11,7 +11,7 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<title>header</title>
+<title>3팀아카데미</title>
 </head>
 <body>
 	<!-- 상단 시작. -->
@@ -37,9 +37,14 @@
 				<!-- 로그인했을때 -->
 				<c:if test="${ member != null }">
 					<div class="login_success_area">
-						<span>회원 : ${member.STU_ID} 님 환영합니다.</span><br> <span class="member"><a
-							href="/mypage/mypage">마이페이지</a></span> <span class="member"><a
-							href="/member/logout.do">로그아웃</a></span>
+						<span>회원 : ${member.STU_ID} 님 환영합니다.</span><br> 
+						<!-- 기존코드
+						<span class="member"><a href="/mypage/mypage">마이페이지</a></span> 
+						<span class="member"><a href="/member/logout.do">로그아웃</a></span> -->
+						<button type="button" class="btn btn-outline-primary"
+						onclick="location.href='/mypage/mypage'" style="cursor: pointer;">마이페이지</button>
+						<button type="button" class="btn btn-outline-primary"
+						onclick="location.href='/member/logout.do'" style="cursor: pointer;">로그아웃</button>
 					</div>
 				</c:if>
 			</div>
@@ -49,7 +54,7 @@
 
 			<div class="row justify-content-md-center">
 				<div class="col-md-auto">
-					<h1>Armoga academy</h1>
+					<h1 onclick="location.href='/main';" style="cursor:pointer;">3팀 academy</h1>
 				</div>
 			</div>
 			<br>
@@ -121,7 +126,7 @@
       <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
         <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
       </a>
-      <span class="mb-3 mb-md-0 text-muted">&copy; 학원명 : 아무개 학원 
+      <span class="mb-3 mb-md-0 text-muted">&copy; 학원명 : 3팀학원
       <br>학원주소 : 서울특별시 강서구 화곡동 211-12 
       <br>전화번호 : 02-666-1234 
       <br>대표자 : 강민철 

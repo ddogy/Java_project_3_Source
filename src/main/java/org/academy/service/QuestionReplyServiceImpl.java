@@ -5,9 +5,11 @@ import java.util.List;
 import org.academy.domain.Criteria;
 import org.academy.domain.QuestionReplyPageDTO;
 import org.academy.domain.QuestionReplyVO;
+import org.academy.mapper.QuestionMapper;
 import org.academy.mapper.QuestionReplyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -20,7 +22,12 @@ public class QuestionReplyServiceImpl implements QuestionReplyService {
 	
 	@Setter(onMethod_ = @Autowired)
 	private QuestionReplyMapper mapper;
+	
+	@Setter(onMethod_ = @Autowired)
+	private QuestionMapper questionMapper;
 
+	
+	@Transactional
 	@Override
 	public int register(QuestionReplyVO vo) {
 		// TODO Auto-generated method stub
@@ -45,6 +52,7 @@ public class QuestionReplyServiceImpl implements QuestionReplyService {
 		return mapper.update(vo);
 	}
 
+	@Transactional
 	@Override
 	public int remove(String qr_code) {
 		// TODO Auto-generated method stub
